@@ -6,7 +6,9 @@ body {
 
 .assignment {
     display:flex;
-    padding:10px;
+    padding:6px;
+    margin:10px;
+    background-color: rgb(144, 199, 218);
 }
 
 .assignment img{
@@ -17,6 +19,6 @@ body {
 
 h1 {
     text-align:center;
-    color:midnightblue;
+    color:rgb(2, 2, 179);
 
 }
