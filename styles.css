@@ -9,16 +9,32 @@ body {
     padding:6px;
     margin:10px;
     background-color: rgb(144, 199, 218);
+    border-radius: 27px;
 }
 
 .assignment img{
     width:200px;
-    padding:10px;
+    margin:10px;
+    border:5px solid rgb(77, 66, 202);
+}
+
+.assignment img:hover{
+    border:5px solid rgb(26, 142, 153);
 }
 
 
 h1 {
     text-align:center;
-    color:rgb(2, 2, 179);
+    color:rgb(2, 2, 180);
 
+}
+
+
+a{
+    text-decoration:none;
+    color:rgb(20, 82, 139);
+}
+
+a:hover{
+    color:rgb(26, 142, 153);
 }
