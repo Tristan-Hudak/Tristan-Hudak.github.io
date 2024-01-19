@@ -1,0 +1,118 @@
+body{
+    background: #736758;
+}
+
+/*Navigation*/
+
+#main-nav {
+    text-align: center;
+    background: #c4c9d2;
+    padding: 10px;
+}
+
+#main-nav a{
+    text-decoration: none;
+    padding: 10px;
+    
+    color: #261B1A;
+}
+
+#main-nav a:hover{
+    font-style: italic;
+    color: #f3cb50;
+    background: #766d54;
+}
+
+/*Structure*/
+
+#content{
+    background:rgb(255, 247, 240);
+    /*padding is inside the element*/
+    padding: 2px;
+    width: 80%;
+    /*on the outside of the element so other elements dont colide*/
+    margin: auto; /*center horizontally*/
+    border-radius: 5pxs;
+}
+
+h1, h2{
+    background:rgb(239, 236, 234);
+    margin: 5px;
+}
+
+h2{
+    padding: 10px;
+}
+
+/*tables*/
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+#content #table{
+    border-collapse: collapse;
+    padding-bottom: 20px;
+}
+
+#content #table th, #content #table td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+#content #table th{
+    background: #bf482b;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+#content #table #none {
+    border: none;
+    background: none;
+}
+
+#content #images{
+    border-spacing: 200px;
+    border-collapse: collapse;
+}
+
+#content #images td{
+    border: 5px solid black;
+    padding: 0;
+    background: #707A8C;
+    
+    
+}
+
+
+
+
+
+
+/*Typography*/
+
+#content {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content p{
+    padding: 10px;
+}
+
+h1{
+    text-align: center;
+    color:#403531;
+}
+
+h2{
+    padding-left: 25px;
+    color:#403531;
+}
+
+.big{
+    font-size: x-large;
+}

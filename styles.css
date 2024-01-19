@@ -1,0 +1,47 @@
+/*structure*/
+body {
+    background:#cbe9fb
+}
+
+/*Navigation*/
+#lists li {
+    list-style-type: none;
+}
+
+#lists a {
+    text-decoration: none;
+    color:black;
+}
+
+#lists a:hover {
+    color: #e37fbf;
+    font-style: italic;
+}
+
+/*Tables*/
+
+/*Typography*/
+h1 {
+    color: #343f61;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+#main-squared {
+    color: #343f61;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#name {
+    text-align: center;
+    font-style: italic;
+    color:#406ba3;
+}
+
+h2 {
+    color:#545E75;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+

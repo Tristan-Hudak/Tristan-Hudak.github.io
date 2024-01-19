@@ -1,0 +1,22 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: lightgray;
+}
+
+/*Structure*/
+
+#content{
+    background:white;
+    /*padding is inside the element*/
+    padding: 2px;
+    width: 80%;
+    /*on the outside of the element so other elements dont colide*/
+    margin: auto; /*center horizontally*/
+    border-radius: 5pxs;
+}
+
+/*Typography*/
+
+h1{
+    color:rgb(67, 67, 67);
+}
