@@ -1,7 +1,32 @@
 /*structure*/
 body {
-    background:#cbe9fb
+    background:#cbe9fb;
+    
 }
+
+#main-squared {
+    width: 85%;
+    margin: auto;
+}
+
+#main-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+h3 {
+    width: 70%;
+    margin: auto;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+#assignment1, #assignment2, #assignment3 {
+    background-color: #5789ff;
+    margin: 10px;
+    padding: 10px;
+}
+
 
 /*Navigation*/
 #lists li {
@@ -18,7 +43,14 @@ body {
     font-style: italic;
 }
 
-/*Tables*/
+/*splitter*/
+
+#title1::after {
+    content: "\a";
+    white-space: pre;
+}
+
+
 
 /*Typography*/
 h1 {
@@ -27,21 +59,68 @@ h1 {
     text-align: center;
 }
 
-#main-squared {
-    color: #343f61;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-#name {
-    text-align: center;
-    font-style: italic;
-    color:#406ba3;
-}
-
 h2 {
-    color:#545E75;
+    color:#dcf1eb;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+h3 {
+    
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
+
+#main-main {
+    text-align: center;
+    color: #ecf8ff;
+}
+
+#link a {
+    text-decoration: none;
+    color:#dcf1eb;
+}
+
+#link a:hover {
+    font-style: italic;
+    
+}
+
+
+/*larger Resolutions*/
+
+@media (min-width: 900px){
+    .flex-box {
+        display: flex;
+    }
+
+    .flex-box-top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .coll1of3, .coll2of3, .coll3of3 {
+        flex: 1;
+    }
+
+    #title1::after {
+        content: none;
+    }
+
+    #name {
+        order: 1;
+        width: 100%;
+    }
+    #main-title {
+        order: 2;
+    }
+    #sub-title {
+        order: 3;
+    }
+
+
+}
+
 
 
 
