@@ -419,20 +419,57 @@ header h3{
     #top-header {
         position: relative;
         width: 100%;
-        padding-bottom: 50px;
+        padding-bottom: 0px;
 
     }
-
-    #bottom-footer {
-        padding: 0;
-    }
-
 
     #top-header #img-box a {
         width: 250px;
         height: 53px;
-        margin: auto;
+        margin: 20px 0 20px 80%;
     }
+
+    #top-header #directory-box {
+        width: 80%;
+    }
+    #top-header #search-box {
+        margin-top: 20px;
+    }
+
+    #bottom-header {
+        margin-top: 0px;
+    }
+    #bottom-header h3{
+        margin: 0px;
+        padding-left: 0;
+        margin-left: 13%;
+        font-size: 170%;
+        padding: 5px 0 5px 0;
+        margin-bottom: 25px;
+    }
+
+    #bottom-footer {
+        margin-top: 0;
+    }
+
+    #place-holder {
+        width: 825px;
+        height: 350px;
+        margin-left: 25%;
+    }
+
+    #main-topic h2, #main-topic p {
+        margin-left: 25%;
+        margin-right: 100px;
+    }
+
+    #main-topic p {
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+
+    
 
 
 
