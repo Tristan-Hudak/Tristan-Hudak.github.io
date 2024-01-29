@@ -4,6 +4,10 @@ body {
     
 }
 
+#selection {
+    margin: auto;
+}
+
 #main-squared {
     width: 85%;
     margin: auto;
@@ -21,11 +25,36 @@ h3 {
 }
 
 
-#assignment1, #assignment2, #assignment3 {
+#assignment1, #assignment2, #assignment3, #assignment5, #assignment {
     background-color: #5789ff;
-    margin: 10px;
-    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    
 }
+
+#project, #project1 {
+    background-color: #615ae0;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+
+
+#assignment-selection, #project-selection {
+    background-color: #4365ca;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 2px;
+    
+}
+
+#direct {
+    
+}
+
 
 
 /*Navigation*/
@@ -60,10 +89,22 @@ h1 {
 }
 
 h2 {
-    color:#dcf1eb;
+    color:#1d2c58;
     text-align: center;
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
+}
+
+#direct {
+    background-color: #343f61;
+    padding: 5px;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+.sub-title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h3 {
@@ -76,14 +117,41 @@ h3 {
     color: #ecf8ff;
 }
 
-#link a {
+#project-main {
+    text-align: center;
+    color: #e7daff;
+}
+
+#main-main #link a {
     text-decoration: none;
     color:#dcf1eb;
+}
+
+#project-main #link a {
+    text-decoration: none;
+    color:#d8b4f8;
+}
+
+#direct a {
+    text-decoration: none;
+    color: #8baaff;
 }
 
 #link a:hover {
     font-style: italic;
     
+}
+
+#direct a:hover {
+    font-style: italic;
+    color: #FF8BE4;
+    border-bottom: 2px solid #CA43A8;
+
+}
+
+#line{
+    background-color: #343f61;
+    height: 10px;
 }
 
 
@@ -102,6 +170,11 @@ h3 {
     .coll1of3, .coll2of3, .coll3of3 {
         flex: 1;
     }
+
+    .coll1of2, .coll2of2{
+        flex: 1;
+    }
+
 
     #title1::after {
         content: none;
