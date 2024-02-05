@@ -1,0 +1,230 @@
+:root {
+    --background-color: #d6e3f8;
+    --secondary-background-color: #fef5ef;
+    --sub-text-color: #9d5c63;
+    --opposite-color: #36c5d9;
+    --text-color: #584b53;
+
+    --img-spin: 0deg;
+    --img-added: "https://place-hold.it/10x10/000/fff";
+}
+
+
+body{
+    background: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+
+
+/*Structure*/
+
+#main-main p{
+    text-align: left;
+}
+
+    /* Stars */
+
+    #stars {
+        text-align: left;
+        width: auto;
+        height: 392px;
+        padding: 0px;
+        background-color: var(--sub-text-color);
+    }
+
+    #stars h3 {
+        text-align: center;
+        color: var(--secondary-background-color);
+    }
+
+
+    #stars #no-use{
+        display: none;
+    }
+
+
+
+.rotate {
+    position: relative;
+    transform: rotate(var(--img-spin));
+}
+
+.btn-invisable {
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    background: none;
+
+
+}
+
+#btn-change-image {
+    width: 200px;
+    height: 200px;
+}
+
+
+#btn-add-stars {
+    position: absolute;
+    max-width: 732px;
+    max-height: 392px;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+/*Column*/ 
+
+.coll1of3 {
+    padding: 5px;
+}
+
+.coll1of3 {
+    border: 1px solid var(--text-color);
+    background-color: var(--secondary-background-color);
+}
+
+
+/*Animation*/
+
+
+
+/*Typography*/
+
+#main-main p, h3, h1{
+    color: var(--text-color);
+}
+
+h2 {
+    color: var(--sub-text-color);
+}
+
+#demo {
+    color: transparent;
+}
+
+
+/*Script*/
+
+    /*slider*/
+
+    .slidecontainer {
+        width: 100%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%; 
+        height: 25px; 
+        background: #d3d3d3;
+        outline: none;
+    }
+
+    .sldier::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: var(--sub-text-color);
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px; 
+        height: 25px;
+        background: var(--sub-text-color); 
+        cursor: pointer;
+    }
+
+    /* add star */
+
+    .star {
+        text-align: center;
+        background-repeat: no-repeat;
+        background-image: url(images/istockphoto-1295967422-1024x1024.jpg);
+        width: 50%;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #star-adder section p {
+        display: none;
+    }
+
+/*Media Quere*/
+
+@media (min-width: 900px){
+
+    .flex-box {
+        display: flex;
+    }
+
+    .coll1of3 {
+        flex: 1;
+    }
+
+    .coll1of3 {
+        margin:  0 40px 0 40px;
+    }
+
+    #change-image {
+        margin-right: 130px;
+    }
+
+    #slider-rotate {
+        margin-right: 150px;
+        margin-left: 150px;
+    }
+
+    #stars {
+        margin-left: 130px;
+        height: 464px;
+        padding: 0px;
+        background-color: var(--sub-text-color);
+        text-align: left;
+    }
+
+    #stars h3 {
+        color: var(--secondary-background-color);
+        text-align: center;
+    }
+
+    #stars .star-adder {
+        text-align: center;
+    }
+
+    #stars img, #stars p {
+        display: none;
+    }
+
+    #stars #background-img {
+        display: block;
+        background-image: "https://place-hold.it/200x200/9d5c63/fff";
+    }
+
+    #btn-add-stars {
+        display: block;
+        max-width: 285px;
+        max-height: 464px;
+        width: 100%;
+        height: 100%;
+    }
+
+    #btn-add-small-stars {
+        display: none;
+        max-width: 285px;
+        max-height: 464px;
+        width: 100%;
+        height: 100%;
+    }
+
+
+}

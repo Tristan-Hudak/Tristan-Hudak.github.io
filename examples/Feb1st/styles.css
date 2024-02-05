@@ -1,0 +1,75 @@
+:root {
+    --square-top: 0px;
+    --ball-color: skyblue;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: lightgray;
+}
+
+/*Structure*/
+
+#content{
+    background:white;
+    /*padding is inside the element*/
+    padding: 2px;
+    width: 80%;
+    /*on the outside of the element so other elements dont colide*/
+    margin: auto; /*center horizontally*/
+    border-radius: 5pxs;
+}
+
+#square {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    position: relative;
+    top: var(--square-top)
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: var(--ball-color);
+}
+
+
+/*Animation*/
+
+.rainbow {
+    animation-name: colorAnim;
+    animation-duration: 4s;
+}
+
+@keyframes colorAnim {
+    0% {background-color: blue;}
+    20% {background-color: aqua;}
+    40% {background-color: purple;}
+    60% {background-color: aqua;}
+    80% {background-color: greenyellow;}
+    100% {background-color: yellow;}
+}
+
+
+/*Typography*/
+
+h1{
+    color:rgb(67, 67, 67);
+}
+
+/* Java Script */
+
+.special {
+    background: cyan;
+    size: 2em;
+    color:brown;
+    border: 5px dashed blue;
+}
+
+.hidden {
+    display: none;
+}
