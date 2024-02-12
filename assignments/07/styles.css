@@ -119,7 +119,7 @@ h2 {
     }
 
     .slider {
-        -webkit-appearance: none;
+        -webkit-appearance: none !important;
         appearance: none;
         width: 100%; 
         height: 25px; 
@@ -128,7 +128,7 @@ h2 {
     }
 
     .sldier::-webkit-slider-thumb {
-        -webkit-appearance: none;
+        -webkit-appearance: none !important;
         appearance: none;
         width: 25px;
         height: 25px;

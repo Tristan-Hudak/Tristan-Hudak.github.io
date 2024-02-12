@@ -25,7 +25,7 @@ h3 {
 }
 
 
-#assignment1, #assignment2, #assignment3, #assignment5, #assignment7, #assignment {
+#assignment, #assignment1, #assignment2, #assignment3, #assignment5, #assignment7, #assignment8 {
     background-color: #5789ff;
     border-radius: 5px;
     margin: 5px;
@@ -33,7 +33,7 @@ h3 {
     
 }
 
-#project, #project1, #project2 {
+#project, #project1, #project2, #project3{
     background-color: #615ae0;
     border-radius: 5px;
     margin: 5px;
