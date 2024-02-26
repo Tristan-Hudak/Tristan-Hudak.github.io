@@ -1,0 +1,55 @@
+:root {
+    --color1: #000;
+    --color2: #f432ac;
+    --color3: #670643;
+    --color4: #ca7645;
+    --color5: #ffcb8f;
+    --color6: #ffe9ad;
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--color6);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Structure*/
+
+header {
+    text-align: center;
+}
+
+#part1, #part2 {
+    border: 2px solid var(--color3);
+    padding: 15px;
+    background: var(--color5);
+    
+}
+
+#ad-txt {
+    text-align: center;
+}
+
+#result {
+    text-align: center;
+}
+
+
+
+/*Typography*/
+
+h2 {
+    color: var(--color2);
+}
+
+#result p {
+    color: var(--color4);
+
+}
+#result a {
+    color: var(--color4);
+    
+}
