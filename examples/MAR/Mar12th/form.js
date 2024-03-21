@@ -17,9 +17,9 @@ const getRadioValue = (radioName) => {
     const radios = document.getElementsByName(radioName);
 
 
-    for(let i in radio) {
+    for(let i in radios) {
         if(radios[i].checked){
-            return radio[i].value;
+            return radios[i].value;
         }
     }
 

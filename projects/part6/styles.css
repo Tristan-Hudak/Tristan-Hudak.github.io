@@ -125,6 +125,11 @@ body{
   margin-right: 50%;
 }
 
+#video {
+    width:100%;
+    height: 50%;
+}
+
     
 
 /* footer of home page*/
@@ -621,7 +626,7 @@ footer {
 #mid-box {
     border: 2px solid var(--text-color);
     margin-top: 10px;
-    height: 200px;
+    height: fit-content;
 }
 
 #mid-box h3 {
@@ -635,6 +640,7 @@ footer {
 
 .item-box {
     margin: 0 5px 2px 5px;
+    padding: 5px;
     background-color: var(--background-color-2);
     border: 1px solid var(--text-color);
     border-radius: 25px;
@@ -642,11 +648,61 @@ footer {
 
 .item-box p {
     margin: 0;
+    padding: 1px;
 }
 
+#create-item {
+    text-align: center;
+}
 
+#hmd {
+    width: 80%;
+    height: 15px;
+    font-size: 60%;
+}
 
+.bolden {
+    font-weight: bold;
+}
 
+#yccm {
+    margin:0;
+    font-size: 70%;
+}
+
+#cat, #dmg, #nm {
+    padding-bottom: 20px;
+}
+
+#nameit {
+    width: 80%;
+}
+
+.fit-con {
+    height: 150px;
+}
+
+.pad {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid var(--text-color);
+    border-radius: 15px;
+}
+
+#description {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    resize: none;
+    width: 350px;
+    height: 100px;
+}
+
+#item-image {
+    position: relative;
+    top: -15px;
+    width: 20%;
+    height: auto;
+}
 
 
 
@@ -893,7 +949,7 @@ footer {
 
 #us {
     border: 4px solid var(--text-color);
-    background-image: linear-gradient(var(--color-grade2) 60%, var(--color-grade) );
+    background-image: linear-gradient(var(--color-grade) 60%, var(--color-grade2) );
     border-radius: 5px;
     padding: 12px;
 }
@@ -917,6 +973,36 @@ footer {
     margin: 2px;
 }
 
+#main-main-contact .long {
+    width: 80%;
+}
+
+
+#bb {
+    border: 5px solid var(--text-color);
+    border-radius: 25px;
+    background-image: linear-gradient(var(--color-grade2) 60%, var(--color-grade3) );
+    margin-bottom: 10px;
+    
+}
+
+#suae {
+    border: 2px solid var(--text-color);
+    border-radius: 25px;
+    background-color: var(--background-color-2);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    
+}
+
+.tab {
+    border: 2px solid var(--text-color);
+    border-radius: 25px;
+    background-color: var(--background-color-2);
+    padding: 8px;
+}
 
 
 /*--------------------------------------------------------*/
