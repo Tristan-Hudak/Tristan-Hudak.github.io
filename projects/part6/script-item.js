@@ -140,32 +140,44 @@ const submitCreateItemForm = (e) => {
 
     console.log(whichIsWhich(itemCategory))
 
-    const items = [];
+
+    const item = new Item(`${itemCategory}`, `${itemName}`, `${itemDamageType}`, `${itemProperties.innerHTML}`, `${itemConditions.innerHTML}`, `${itemDiceAmount}`, `${itemDiceType}`, `${itemDescription}`, imageSRC )
+    console.log(item)
+    console.log(whichIsWhich(itemCategory))
+    document.getElementById(whichIsWhich(itemCategory)).append(item.createItem);
+
+
+    /*const items = [];
     items.push(new Item(`${itemCategory}`, `${itemName}`, `${itemDamageType}`, `${itemProperties.innerHTML}`, `${itemConditions.innerHTML}`, `${itemDiceAmount}`, `${itemDiceType}`, `${itemDescription}`, imageSRC ))
 
     items.forEach((item) => {
         console.log(item);
         document.getElementById(whichIsWhich(itemCategory)).append(item.createItem);
-    });
+    });*/
 }
 
 const whichIsWhich = (cat) => {
 
     let theRightOne = "";
 
-    if(cat == "weapon") {
-        theRightOne = "nav-items-w"
+    if(cat == "Weapon") {
+        theRightOne = "nav-items-w";
+        console.log(theRightOne);
     }
-    else if (cat == "spell") {
-        theRightOne = "nav-items-s"
+    else if (cat == "Spell") {
+        theRightOne = "nav-items-s";
+        console.log(theRightOne);
     }
-    else if (cat == "wonder") {
-        theRightOne = "nav-items-m"
+    else if (cat == "Wonder") {
+        theRightOne = "nav-items-m";
+        console.log(theRightOne);
     }
-    else if (cat == "equipment") {
-        theRightOne = "nav-items-e"
+    else if (cat == "Equipment") {
+        theRightOne = "nav-items-e";
+        console.log(theRightOne);
     }
-    console.log(theRightOne)
+
+    console.log(theRightOne);
 
     return theRightOne;
 
