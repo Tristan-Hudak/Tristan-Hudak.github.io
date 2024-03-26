@@ -16,13 +16,138 @@ const getItems = async() => {
 const showItems = async() => {
     console.log("is work");
 
-    let Items = await getItems();
+    let ItemsJson = await getItems();
 
-    console.log(Item);
+    console.log(ItemJson);
+    console.log(ItemJson.category);
+
+    ItemsJson.forEach((item) => {
+        let sectionIn = whichIsWhich(item.category);
+        console.log(item.category + " " + whichIsWhich(item.category));
+        sectionIn.append(createItem(house));
+    });
+    
+
+}
+
+// Creating an item
+
+class Item {
+
+    constructor(category, name, type, property, condition, diceAmount, diceValue, description, itemIMG) {
+        this.category = category;
+        this.name = name;
+        this.type =type
+        this.property = property;
+        this.condition = condition;
+        this.diceAmount = diceAmount;
+        this.diceValue = diceValue;
+        this.description = description;
+        this.itemIMG = itemIMG;
+
+    }
+
+    get createItem() {
+        const div = document.createElement("div");
+        div.classList.add("item-box")
+
+
+        //top flexbox
+
+        const section01 = document.createElement("section");
+        const section02 = document.createElement("section");
+        const img =  document.createElement("img");
+
+        section01.classList.add("coll1of2");
+        section02.classList.add("coll1of2");
+
+        img.setAttribute('id',"item-image");
+
+        img.src = this.itemIMG;
+
+        const flexDiv = document.createElement("div");
+        flexDiv.classList.add("flex-box")
+
+        section01.append(img);
+        section02.append(this.category + " Name: " + this.name);
+
+        flexDiv.append(section01);
+        flexDiv.append(section02);
+
+
+        //middle flexbox
+        const flexDiv2 = document.createElement("div");
+        flexDiv2.classList.add("flex-box");
+
+        const section11 = document.createElement("section");
+        const section12 = document.createElement("section");
+
+
+        section11.classList.add("coll1of3");
+        section12.classList.add("coll1of3");
+
+
+        section11.append(this.diceAmount + this.diceValue);
+        section12.append(this.type + " Damage");
+
+        flexDiv2.append(section11);
+        flexDiv2.append(section12);
+
+
+        //third row
+        const cond_prop =  document.createElement("p");
+        const descrip =  document.createElement("p");
+
+        cond_prop.innerHTML ="Properties: " + this.property + " Conditions: " + this.condition;
+        descrip.innerHTML = "Description: " + this.description;
+
+
+
+        div.append(flexDiv);
+        div.append(flexDiv2);
+        div.append(cond_prop);
+        div.append(descrip);
+
+        return div;
+        
+    }
+
     
 
 
+
 }
+
+
+
+//decide the section placed in
+
+const whichIsWhich = (cat) => {
+
+    let theRightOne = "";
+
+    if(cat == "Weapon") {
+        theRightOne = "nav-items-w";
+        console.log(theRightOne);
+    }
+    else if (cat == "Spell") {
+        theRightOne = "nav-items-s";
+        console.log(theRightOne);
+    }
+    else if (cat == "Wonder") {
+        theRightOne = "nav-items-m";
+        console.log(theRightOne);
+    }
+    else if (cat == "Equipment") {
+        theRightOne = "nav-items-e";
+        console.log(theRightOne);
+    }
+
+    console.log(theRightOne);
+
+    return theRightOne;
+
+};
 
 
 

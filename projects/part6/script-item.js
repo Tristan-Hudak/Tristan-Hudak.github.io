@@ -1,5 +1,6 @@
 
 const getItems = async() => {
+    // has to be pushed to GitHub so i can check whether the json file works cause it doesnt like it any other way for some reason
     const url = "JSON/item-shop.json";
 
     try {
