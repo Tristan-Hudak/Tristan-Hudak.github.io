@@ -67,6 +67,7 @@ const getJsonItem = (item) => {
 
 
     section11.append(item.values.amount + item.values.dice);
+    console.log(item.values.amount + item.values.dice);
     section12.append(item.type + " Damage");
 
     flexDiv2.append(section11);
@@ -75,6 +76,8 @@ const getJsonItem = (item) => {
     //third row
     const cond_prop =  document.createElement("p");
     //const descrip =  document.createElement("p");
+
+    console.log(item.values.properties);
 
     cond_prop.innerHTML ="Properties: " +  getPropertiesFromJson(item.values.properties)
     //descrip.innerHTML = "Description: " + this.description;
