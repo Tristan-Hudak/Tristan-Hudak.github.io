@@ -5,7 +5,8 @@
         "image": "images/charcater.png",
         "values": [
             {
-                "dmg": "1d6",
+                "amount": "1",
+                "dice": "d6",
                 "type": "piercing",
                 "properties": [
                     "Finesse",
@@ -38,7 +39,8 @@
         "image": "images/item.png",
         "values": [
             {
-                "dmg": "1d10",
+                "amount": "1",
+                "dice": "d10",
                 "type": "fire",
                 "properties": [
                     "Single Target",
