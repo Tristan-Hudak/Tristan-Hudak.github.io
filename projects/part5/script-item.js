@@ -18,17 +18,87 @@ const showItems = async() => {
 
     let ItemsJson = await getItems();
 
-    console.log(ItemJson);
-    console.log(ItemJson.category);
+    console.log(ItemsJson);
+    console.log(ItemsJson.category);
 
     ItemsJson.forEach((item) => {
         let sectionIn = whichIsWhich(item.category);
-        console.log(item.category + " " + whichIsWhich(item.category));
-        sectionIn.append(createItem(house));
+        //console.log(item.category + " " + whichIsWhich(item.category));
+        sectionIn.append(getJsonItem(item));
     });
     
 
 }
+
+const getJsonItem = (item) => {
+    const div = document.createElement("div");
+    div.classList.add("item-box")
+
+    const section01 = document.createElement("section");
+    const section02 = document.createElement("section");
+    const img =  document.createElement("img");
+
+    section01.classList.add("coll1of2");
+    section02.classList.add("coll1of2");
+
+    img.setAttribute('id',"item-image");
+
+    img.src = item.image;
+
+    const flexDiv = document.createElement("div");
+    flexDiv.classList.add("flex-box")
+
+    section01.append(img);
+    section02.append(item.category + " Name: " + item.name);
+
+    flexDiv.append(section01);
+    flexDiv.append(section02);
+
+    // second row
+    const flexDiv2 = document.createElement("div");
+    flexDiv2.classList.add("flex-box");
+
+    const section11 = document.createElement("section");
+    const section12 = document.createElement("section");
+
+
+    section11.classList.add("coll1of3");
+    section12.classList.add("coll1of3");
+
+
+    section11.append(item.values.amount + item.values.dice);
+    section12.append(item.type + " Damage");
+
+    flexDiv2.append(section11);
+    flexDiv2.append(section12);
+
+    //third row
+    const cond_prop =  document.createElement("p");
+    //const descrip =  document.createElement("p");
+
+    cond_prop.innerHTML ="Properties: " +  getPropertiesFromJson(item.values.properties)
+    //descrip.innerHTML = "Description: " + this.description;
+
+
+
+    div.append(flexDiv);
+    div.append(flexDiv2);
+    div.append(cond_prop);
+    //div.append(descrip);
+
+    return div;
+
+}
+
+const getPropertiesFromJson = (properties) => {
+
+    properties.forEach((property)=>{
+        cond_prop.append(property)
+    });
+}
+
+
+
 
 // Creating an item
 
@@ -117,11 +187,51 @@ class Item {
 
 
 }
+/*
+const submitCreateItemForm = (e) => {
+    e.preventDefault();
+    //console.log("hi")
+
+    const form = e.target;
+    const itemCategory = form.elements["item-category"].value;
+    const itemName = form.elements["item-name"].value;
+    const itemDamageType = form.elements["item-damage-type"].value;
+    const itemProperties = getPropertyConditionValue("item-properties");
+    const itemConditions = getPropertyConditionValue("item-conditions");
+    const itemDiceAmount = form.elements["item-dice-amount"].value;
+    const itemDiceType = form.elements["item-dice-type"].value;
+    const itemDescription = form.elements["item-desc"].value;
+    const imageSRC = "images/signin.png";
+
+    console.log(
+        "Category " + itemCategory + 
+        " Name " + itemName + 
+        " damage type " + itemDamageType + 
+        " properties " + itemProperties.innerHTML +
+        " condoitions " + itemConditions.innerHTML +
+        " dice amount " + itemDiceAmount + 
+        " dice type D" + itemDiceType + 
+        " descrip " + itemDescription
+    );
+
+    console.log(whichIsWhich(itemCategory))
 
 
+    const item = new Item(`${itemCategory}`, `${itemName}`, `${itemDamageType}`, `${itemProperties.innerHTML}`, `${itemConditions.innerHTML}`, `${itemDiceAmount}`, `${itemDiceType}`, `${itemDescription}`, imageSRC )
+    console.log(item)
+    console.log(whichIsWhich(itemCategory))
+    document.getElementById(whichIsWhich(itemCategory)).append(item.createItem);
 
-//decide the section placed in
 
+    /*const items = [];
+    items.push(new Item(`${itemCategory}`, `${itemName}`, `${itemDamageType}`, `${itemProperties.innerHTML}`, `${itemConditions.innerHTML}`, `${itemDiceAmount}`, `${itemDiceType}`, `${itemDescription}`, imageSRC ))
+
+    items.forEach((item) => {
+        console.log(item);
+        document.getElementById(whichIsWhich(itemCategory)).append(item.createItem);
+    });
+}
+*/
 const whichIsWhich = (cat) => {
 
     let theRightOne = "";
@@ -149,11 +259,31 @@ const whichIsWhich = (cat) => {
 
 };
 
+const getPropertyConditionValue = (thingy) => {
+
+    // attributed code : https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/storing-values-from-multiple-select-into/td-p/1252385
+    const optionsTest = document.getElementById(thingy).selectedOptions;
+    const values = Array.from(optionsTest).map(({value}) => " " + value );
+
+    const p = document.createElement("p")
+
+    for(let i in values) {
+        //console.log(values);
+        const splicedThing = values.splice(0)
+        p.append(splicedThing);
+        //console.log(p)
+
+    };
+
+    //console.log(p)
+    
+    return p;
+
+}
 
 
 
-
-
+//document.getElementById("form-created-item").onsubmit = submitCreateItemForm;
 
 //nav stuff
 

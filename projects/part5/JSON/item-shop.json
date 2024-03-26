@@ -1,6 +1,6 @@
 [
     {
-        "category": "weapon",
+        "category": "Weapon",
         "name": "Short Sword",
         "image": "images/charcater.png",
         "values": [
@@ -16,12 +16,13 @@
         ]
     },
     {
-        "category": "weapon",
+        "category": "Weapon",
         "name": "Great Sword",
         "image": "images/charcater.png",
         "values": [
             {
-                "dmg": "2d6",
+                "amount": "2",
+                "dice": "d6",
                 "type": "piercing",
                 "properties": [
                     "Heavy",
@@ -32,7 +33,7 @@
         ]
     },
     {
-        "category": "spell",
+        "category": "Spell",
         "name": "Fire Bolt",
         "image": "images/item.png",
         "values": [
