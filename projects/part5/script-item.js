@@ -20,7 +20,7 @@ const showItems = async() => {
     ItemsJson.forEach((item) => {
         let sectionIn = whichIsWhich(item.category);
         const section = document.getElementById(sectionIn)
-        //console.log(getJsonItem(item))
+        console.log(getJsonItem(item))
         section.append(getJsonItem(item));
     });
     
