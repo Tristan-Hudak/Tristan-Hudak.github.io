@@ -1,6 +1,6 @@
 
 const getItems = async() => {
-    const url = "JSON/item-shop.json";
+    const url = "https://tristan-hudak.github.io/projects/part5/JSON/item-shop.json";
 
     try {
         const response = await fetch(url);
@@ -14,23 +14,32 @@ const getItems = async() => {
 };
 
 const showItems = async() => {
-    console.log("is work");
+    //console.log("is work");
 
     let ItemsJson = await getItems();
-
-    console.log(ItemsJson);
-    console.log(ItemsJson.category);
-
     ItemsJson.forEach((item) => {
         let sectionIn = whichIsWhich(item.category);
-        //console.log(item.category + " " + whichIsWhich(item.category));
-        sectionIn.append(getJsonItem(item));
+        const section = document.getElementById(sectionIn)
+        //console.log(getJsonItem(item))
+        section.append(getJsonItem(item));
     });
     
 
 }
 
 const getJsonItem = (item) => {
+
+    const itemCat = item.category;
+    const itemName = item.name;
+    const itemImg = item.image;
+    const valsArray = getObjectProp(item.values);
+
+    const valAmount = valsArray[0];
+    const valDice = valsArray[1];
+    const valType = valsArray[2];
+    const valProp = valsArray[3];
+    
+
     const div = document.createElement("div");
     div.classList.add("item-box")
 
@@ -43,13 +52,13 @@ const getJsonItem = (item) => {
 
     img.setAttribute('id',"item-image");
 
-    img.src = item.image;
+    img.src = itemImg;
 
     const flexDiv = document.createElement("div");
     flexDiv.classList.add("flex-box")
 
     section01.append(img);
-    section02.append(item.category + " Name: " + item.name);
+    section02.append(itemCat + " Name: " + itemName);
 
     flexDiv.append(section01);
     flexDiv.append(section02);
@@ -66,38 +75,53 @@ const getJsonItem = (item) => {
     section12.classList.add("coll1of3");
 
 
-    section11.append(item.values.amount + item.values.dice);
-    console.log(item.values.amount + item.values.dice);
-    section12.append(item.type + " Damage");
+    section11.append(valAmount + valDice);
+    section12.append(valType);
 
     flexDiv2.append(section11);
     flexDiv2.append(section12);
 
     //third row
     const cond_prop =  document.createElement("p");
-    //const descrip =  document.createElement("p");
 
-    console.log(item.values.properties);
+    const propVal = getPropertiesFromJson(valProp);
+    //console.log(propVal.innerHTML);
 
-    cond_prop.innerHTML ="Properties: " +  getPropertiesFromJson(item.values.properties)
-    //descrip.innerHTML = "Description: " + this.description;
-
+    cond_prop.innerHTML ="Properties: " + propVal.innerHTML;
 
 
+    //final construct
     div.append(flexDiv);
     div.append(flexDiv2);
     div.append(cond_prop);
-    //div.append(descrip);
 
     return div;
 
 }
 
+const getObjectProp = (valsObj) => {
+    valObjArray = [];
+
+    valsObj.forEach((valObj) =>{
+
+        valObjArray = Object.values(valObj);
+
+    });
+    //console.log(valObjArray);
+
+    return valObjArray;
+}
+
+
 const getPropertiesFromJson = (properties) => {
+    const p =  document.createElement("p");
 
     properties.forEach((property)=>{
-        cond_prop.append(property)
+        p.append(property + ", ");
+        //console.log(p);
     });
+
+    return p
 }
 
 
@@ -241,22 +265,22 @@ const whichIsWhich = (cat) => {
 
     if(cat == "Weapon") {
         theRightOne = "nav-items-w";
-        console.log(theRightOne);
+        //console.log(theRightOne);
     }
     else if (cat == "Spell") {
         theRightOne = "nav-items-s";
-        console.log(theRightOne);
+        //console.log(theRightOne);
     }
     else if (cat == "Wonder") {
         theRightOne = "nav-items-m";
-        console.log(theRightOne);
+        //console.log(theRightOne);
     }
     else if (cat == "Equipment") {
         theRightOne = "nav-items-e";
-        console.log(theRightOne);
+        //console.log(theRightOne);
     }
 
-    console.log(theRightOne);
+    //console.log(theRightOne);
 
     return theRightOne;
 

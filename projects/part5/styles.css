@@ -634,6 +634,7 @@ footer {
 }
 
 .item-box {
+    padding: 5px;
     margin: 0 5px 2px 5px;
     background-color: var(--background-color-2);
     border: 1px solid var(--text-color);
@@ -643,7 +644,6 @@ footer {
 .item-box p {
     margin: 0;
 }
-
 
 
 

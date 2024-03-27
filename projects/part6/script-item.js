@@ -1,7 +1,6 @@
 
 const getItems = async() => {
-    // has to be pushed to GitHub so i can check whether the json file works cause it doesnt like it any other way for some reason
-    const url = "JSON/item-shop.json";
+    const url = "https://tristan-hudak.github.io/projects/part6/JSON/item-shop.json";
 
     try {
         const response = await fetch(url);
@@ -15,14 +14,114 @@ const getItems = async() => {
 };
 
 const showItems = async() => {
-    console.log("is work");
+    //console.log("is work");
 
-    let Items = await getItems();
-
-    console.log(Item);
+    let ItemsJson = await getItems();
+    ItemsJson.forEach((item) => {
+        let sectionIn = whichIsWhich(item.category);
+        const section = document.getElementById(sectionIn)
+        //console.log(getJsonItem(item))
+        section.append(getJsonItem(item));
+    });
     
 
+}
 
+const getJsonItem = (item) => {
+
+    const itemCat = item.category;
+    const itemName = item.name;
+    const itemImg = item.image;
+    const valsArray = getObjectProp(item.values);
+
+    const valAmount = valsArray[0];
+    const valDice = valsArray[1];
+    const valType = valsArray[2];
+    const valProp = valsArray[3];
+    
+
+    const div = document.createElement("div");
+    div.classList.add("item-box")
+
+    const section01 = document.createElement("section");
+    const section02 = document.createElement("section");
+    const img =  document.createElement("img");
+
+    section01.classList.add("coll1of2");
+    section02.classList.add("coll1of2");
+
+    img.setAttribute('id',"item-image");
+
+    img.src = itemImg;
+
+    const flexDiv = document.createElement("div");
+    flexDiv.classList.add("flex-box")
+
+    section01.append(img);
+    section02.append(itemCat + " Name: " + itemName);
+
+    flexDiv.append(section01);
+    flexDiv.append(section02);
+
+    // second row
+    const flexDiv2 = document.createElement("div");
+    flexDiv2.classList.add("flex-box");
+
+    const section11 = document.createElement("section");
+    const section12 = document.createElement("section");
+
+
+    section11.classList.add("coll1of3");
+    section12.classList.add("coll1of3");
+
+
+    section11.append(valAmount + valDice);
+    section12.append(valType);
+
+    flexDiv2.append(section11);
+    flexDiv2.append(section12);
+
+    //third row
+    const cond_prop =  document.createElement("p");
+
+    const propVal = getPropertiesFromJson(valProp);
+    //console.log(propVal.innerHTML);
+
+    cond_prop.innerHTML ="Properties: " + propVal.innerHTML;
+
+
+    //final construct
+    div.append(flexDiv);
+    div.append(flexDiv2);
+    div.append(cond_prop);
+
+    return div;
+
+}
+
+const getObjectProp = (valsObj) => {
+    valObjArray = [];
+
+    valsObj.forEach((valObj) =>{
+
+        valObjArray = Object.values(valObj);
+
+    });
+    //console.log(valObjArray);
+
+    return valObjArray;
+}
+
+
+const getPropertiesFromJson = (properties) => {
+    const p =  document.createElement("p");
+
+    properties.forEach((property)=>{
+        p.append(property + ", ");
+        //console.log(p);
+    });
+
+    return p
 }
 
 // Creating an item
